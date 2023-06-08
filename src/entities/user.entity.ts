@@ -20,11 +20,7 @@ export class User {
   @Column('varchar', { comment: '名前' })
   name: string;
 
-  @Column({
-    name: 'email',
-    type: 'varchar',
-    comment: 'メールアドレス',
-  })
+  @Column('varchar', { comment: 'メールアドレス' })
   email: string;
 
   @CreateDateColumn({ comment: '登録日' })
