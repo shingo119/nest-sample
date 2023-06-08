@@ -8,6 +8,8 @@ export const AppDataSource = new DataSource({
   username: 'test',
   password: 'test',
   database: 'test',
-  synchronize: true,
+  synchronize: false,
+  logging: true,
   entities: [User],
+  migrations: ['dist/migration/*.js'],
 });

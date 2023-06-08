@@ -13,3 +13,8 @@ services:
       MYSQL_DATABASE: test
       MYSQL_USER: test
       MYSQL_PASSWORD: test
+  adminer:
+    image: adminer
+    container_name: adminer
+    ports:
+      - 8080:8080
