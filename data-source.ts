@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-// import { User } from './src/user/entities/user.entity';
+import { User } from './src/entities/user.entity';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
@@ -8,8 +8,8 @@ export const AppDataSource = new DataSource({
   username: 'test',
   password: 'test',
   database: 'test',
-  synchronize: false,
+  synchronize: true,
   logging: true,
-  entities: ['src/entities/*.ts'],
+  entities: [User],
   migrations: ['src/migrations/*.ts'],
 });

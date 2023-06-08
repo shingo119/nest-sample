@@ -9,18 +9,27 @@ import {
 
 @Entity('users')
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({
+    name: 'id',
+    unsigned: true,
+    type: 'smallint',
+    comment: 'ID',
+  })
   readonly id: number;
 
-  @Column()
+  @Column('varchar', { comment: '名前' })
   name: string;
 
-  @Column()
+  @Column({
+    name: 'email',
+    type: 'varchar',
+    comment: 'メールアドレス',
+  })
   email: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ comment: '登録日' })
   readonly created_at?: Timestamp;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ comment: '最終更新日' })
   readonly updated_at?: Timestamp;
 }
